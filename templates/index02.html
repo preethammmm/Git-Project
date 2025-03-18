@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="/static/style02.css">
+</head>
+<body>
+    <h1>Scientific Calculator</h1>
+    <form method="post">
+        <div class="input-group">
+            <label for="a">Number A:</label>
+            <input type="text" id="a" name="a" value="{{ a }}">
+        </div>
+        <div class="input-group">
+            <label for="b">Number B (for binary operations):</label>
+            <input type="text" id="b" name="b" value="{{ b }}">
+        </div>
+        <div class="buttons">
+            <!-- Binary operations -->
+            <button type="submit" name="operation" value="+">+</button>
+            <button type="submit" name="operation" value="-">−</button>
+            <button type="submit" name="operation" value="*">×</button>
+            <button type="submit" name="operation" value="/">÷</button>
+            <button type="submit" name="operation" value="power">xʸ</button>
+            <!-- Unary operations -->
+            <button type="submit" name="operation" value="sqrt">√</button>
+            <button type="submit" name="operation" value="sin">sin</button>
+            <button type="submit" name="operation" value="cos">cos</button>
+            <button type="submit" name="operation" value="tan">tan</button>
+            <button type="submit" name="operation" value="log">log</button>
+        </div>
+    </form>
+    <h2>Result: {{ result }}</h2>
+</body>
+</html>
