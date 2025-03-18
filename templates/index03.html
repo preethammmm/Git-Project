@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="/static/style03.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Scientific Calculator</h1>
+        <form method="post">
+            <!-- Display for the full expression -->
+            <input type="text" id="display" name="expression" value="{{ expression }}" readonly>
+            <div class="buttons">
+                <!-- Top row: Clear, Backspace, Open and Close Brackets -->
+                <button type="button" class="clear" onclick="clearDisplay()">AC</button>
+                <button type="button" class="delete" onclick="backspace()">⌫</button>
+                <button type="button" onclick="appendToDisplay('(')">(</button>
+                <button type="button" onclick="appendToDisplay(')')">)</button>
+                
+                <!-- Constants and Functions -->
+                <button type="button" onclick="appendToDisplay('pi')">π</button>
+                <button type="button" onclick="appendToDisplay('e')">e</button>
+                <button type="button" onclick="appendToDisplay('sin(')">sin</button>
+                <button type="button" onclick="appendToDisplay('cos(')">cos</button>
+                
+                <button type="button" onclick="appendToDisplay('tan(')">tan</button>
+                <button type="button" onclick="appendToDisplay('log(')">log</button>
+                <button type="button" onclick="appendToDisplay('ln(')">ln</button>
+                <button type="button" onclick="appendToDisplay('sqrt(')">√</button>
+                
+                <button type="button" onclick="appendToDisplay('abs(')">abs</button>
+                <button type="button" onclick="appendToDisplay('fact(')">fact</button>
+                <button type="button" onclick="appendToDisplay('exp(')">exp</button>
+                <!-- For exponentiation, we insert Python's ** operator -->
+                <button type="button" onclick="appendToDisplay('**')">^</button>
+                
+                <!-- Number and basic operator buttons arranged in a grid -->
+                <button type="button" onclick="appendToDisplay('7')">7</button>
+                <button type="button" onclick="appendToDisplay('8')">8</button>
+                <button type="button" onclick="appendToDisplay('9')">9</button>
+                <button type="button" onclick="appendToDisplay('/')">÷</button>
+                
+                <button type="button" onclick="appendToDisplay('4')">4</button>
+                <button type="button" onclick="appendToDisplay('5')">5</button>
+                <button type="button" onclick="appendToDisplay('6')">6</button>
+                <button type="button" onclick="appendToDisplay('*')">×</button>
+                
+                <button type="button" onclick="appendToDisplay('1')">1</button>
+                <button type="button" onclick="appendToDisplay('2')">2</button>
+                <button type="button" onclick="appendToDisplay('3')">3</button>
+                <button type="button" onclick="appendToDisplay('-')">−</button>
+                
+                <button type="button" onclick="appendToDisplay('0')">0</button>
+                <button type="button" onclick="appendToDisplay('.')">.</button>
+                <button type="button" onclick="appendToDisplay('+')">+</button>
+                <!-- Equals button submits the form -->
+                <button type="submit" class="equals">=</button>
+            </div>
+        </form>
+        <h2>Result: {{ result }}</h2>
+    </div>
+    <script src="/static/finalscript.js"></script>
+</body>
+</html>
