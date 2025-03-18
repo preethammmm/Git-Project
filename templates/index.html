@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Scientific Calculator</h1>
+    <form method="post">
+        <label>Number A: <input type="text" name="a"></label><br>
+        <label>Number B (if needed): <input type="text" name="b"></label><br>
+        <label>Operation: 
+            <select name="operation">
+                <option value="+">Addition</option>
+                <option value="-">Subtraction</option>
+                <option value="*">Multiplication</option>
+                <option value="/">Division</option>
+                <option value="power">Power</option>
+                <option value="sqrt">Square Root</option>
+                <option value="sin">Sine</option>
+                <option value="cos">Cosine</option>
+                <option value="tan">Tangent</option>
+            </select>
+        </label><br>
+        <button type="submit">Calculate</button>
+    </form>
+    <h2>Result: {{ result }}</h2>
+</body>
+</html>
